@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game of Thrones · Character Gallery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="site-header">
+        <svg class="crown" viewBox="0 0 64 64" aria-hidden="true">
+          <path
+            fill="currentColor"
+            d="M8 48h48v6H8zm4-6 8-22 12 14L44 12l8 30H12z"
+          />
+        </svg>
+        <div class="eyebrow">The Seven Kingdoms</div>
+        <h1>Game of Thrones</h1>
+        <p class="tagline">Main characters, season by season</p>
+        <div class="rule"></div>
+      </header>
+
+      <nav class="season-tabs" role="tablist" aria-label="Seasons" id="tabs"></nav>
+
+      <section class="season-intro" id="season-intro" aria-live="polite"></section>
+
+      <section
+        class="grid"
+        id="grid"
+        role="tabpanel"
+        aria-label="Season characters"
+      ></section>
+
+      <footer class="site-footer">
+        Photos via ThronesAPI · HBO’s Game of Thrones
+      </footer>
+    </div>
+
+    <script src="characters.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
