@@ -3,6 +3,11 @@ const HOUSE_COLORS = {
   Lannister: "#b42318",
   Targaryen: "#7a1010",
   Baratheon: "#c9a227",
+  Arryn: "#6ea8d8",
+  Tully: "#8b2e2e",
+  Frey: "#8a6b73",
+  "Night's Watch": "#4a4a4a",
+  "White Walkers": "#7ec8e3",
   Greyjoy: "#6b5b3a",
   Tyrell: "#3f7a3a",
   Martell: "#c45c12",
@@ -71,6 +76,7 @@ function renderSeason(seasonNumber) {
     img.src = character.image;
     img.alt = character.name;
     img.loading = "lazy";
+    img.referrerPolicy = "no-referrer";
     img.addEventListener("error", () => {
       const fallback = document.createElement("div");
       fallback.className = "fallback";
@@ -105,7 +111,11 @@ function buildTabs() {
     button.id = `tab-${season.number}`;
     button.dataset.season = String(season.number);
     button.setAttribute("aria-controls", "grid");
-    button.textContent = `Season ${season.number}`;
+    button.setAttribute("aria-label", `Season ${season.number}`);
+    button.innerHTML = `
+      <span class="tab-full">Season ${season.number}</span>
+      <span class="tab-short">${season.number}</span>
+    `;
     button.addEventListener("click", () => renderSeason(season.number));
     tabsEl.append(button);
   });
